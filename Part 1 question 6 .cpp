@@ -4,8 +4,8 @@ using namespace std;
 int main() {
   int temperature,desired_max(0),desired_min(0);
 int *p=&temperature;
-int *max=&desired_main;
-int *min=&desired_maun;
+int *max=&desired_max;
+int *min=&desired_min;
   lebl:
   cout<<"enter the temperature:";
   cin>>temperature;
