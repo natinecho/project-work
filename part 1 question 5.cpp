@@ -1,5 +1,4 @@
 #include <iostream>
-#include<stdlib.h>
 using namespace std;
 int main() {
   double lone,interest,payment,balance_lone[40],monthly_interest[40],count(0);
