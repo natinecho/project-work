@@ -1,25 +1,33 @@
 #include <iostream>
 using namespace std;
 int main() {
-  double lone,interest,payment,balance_lone[40],monthly_interest[40],count(0);
-  cout<<"enter the lone amount:";
-  cin>>lone;
-  cout<<"enter interest rate:";
+
+ //declare variables 
+  double loan,interest,payment,balance_loan[40],monthly_interest[40],count(0);
+  cout<<"enter the loan amount:"; //prompt the user to enter loan amount
+  cin>>loan;
+  cout<<"enter interest rate:"; //get interest rate from the user
   cin>>interest;
-  payment=(lone)/20;
-  cout<<"months"<<'\t'<<"monthly_interest"<<'\t'<<"balance of lone"<<'\t'<<" monthly payment"<<endl;
+  payment=(loan)/20; //calculate monthly payment
+ //display table headers
+  cout<<"months"<<'\t'<<"monthly_interest"<<'\t'<<"balance of loan"<<'\t'<<" monthly payment"<<endl;
   int i=0;
-  while(lone>0){
-      monthly_interest[i]=(lone*interest*0.01)/12;
-      balance_lone[i]=(lone-(payment-monthly_interest[i]));
-      
-      lone=balance_lone[i];
-      if(balance_lone[i]<0){
-         payment+=balance_lone[i];
-        balance_lone[i]=0;
+  //loop until loan is fully paid off
+  while(loan>0){
+    // Calculate monthly interest and balance of loan
+      monthly_interest[i]=(loan*interest*0.01)/12;
+      balance_loan[i]=(loan-(payment-monthly_interest[i]));
+      // Update loan and payment if balance_loan is negative 
+      loan=balance_loan[i];
+      if(balance_loan[i]<0){
+         payment+=balance_loan[i];
+        balance_loan[i]=0;
       }
-       cout<<'\n'<<"month"<<i+1<<'\t'<<'\t'<<monthly_interest[i]<<'\t'<<'\t'<<balance_lone[i]<<'\t'<<'\t'<<payment<<endl;
+      // Display monthly data in table format
+       cout<<'\n'<<"month"<<i+1<<'\t'<<'\t'<<monthly_interest[i]<<'\t'<<'\t'<<balance_loan[i]<<'\t'<<'\t'<<payment<<endl;
+      // Increment month count
       i++;
   }
+ // End of program
 return 0;
 }
