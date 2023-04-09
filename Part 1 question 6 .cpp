@@ -2,7 +2,8 @@
 #include<cmath>
 using namespace std;
 int main() {
-  //declare variables 
+  //declare variables
+  menu:
   int temperature,desired_max(0),desired_min(0);
   int *p=&temperature;
   int *max=&desired_max;
@@ -45,7 +46,15 @@ int main() {
   else{
     cout << "Next smallest temperature: " <<*min << endl;
     cout << "Next largest temperature: " <<*max << endl;
-  }
+  cout<<endl; 
+}
+cout<<"If you want to return To* menu enter: y ";
+char ask;
+cin>>ask;
+if(ask=='y'){
+goto menu;
+cout<<endl;
+}
 //End of program
 return 0;
 }
