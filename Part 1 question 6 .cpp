@@ -34,7 +34,7 @@ int to_input[4][3]={
  // prompt the user for temperature input
   lebl:
   cout<<"enter the temperature:";
-  cin>>temperature;
+  cin>>*p;
  // validate temprature input
   if(*p>999 || *p<0){
     cout<<"the temprature is not in range try again!";
