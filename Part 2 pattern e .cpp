@@ -6,7 +6,7 @@ using namespace std;
 int main(){
     //This block contains two loops for the first 10 rows
     int  n;
-    cout <<"enter number of row";
+    cout <<"enter number of colunm";
     cin>>n;
     for (int i = 0; i < (n/2)+1; i++) {
 
