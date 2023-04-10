@@ -16,7 +16,7 @@ int main() {
   //loop until loan is fully paid off
   while(loan>0){
     // Calculate monthly interest and balance of loan
-      *(monthly_interest+i)=(loan*interest*0.01)/12;
+      *(monthly_interest+i)=(loan*(interest/100))/12;
       *(balance_loan+i)=(loan-(payment-monthly_interest[i]));
       // Update loan and payment if balance_loan is negative 
       loan=*(balance_loan+i);
