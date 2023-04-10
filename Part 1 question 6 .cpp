@@ -5,7 +5,7 @@ int main() {
   //declare variables
  
 cout<<"**********************************"<<endl;
-cout<<"*  Temperature Adjustment Menu   *"<<endl;
+cout<<"*   Temperature Adjustment Menu    *"<<endl;
 cout<<"**********************************"<<endl;
 cout<<endl;
 int to_input[4][3]={
