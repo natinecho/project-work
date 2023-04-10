@@ -68,7 +68,7 @@ int to_input[4][3]={
   cout<<endl; 
 }
 //allow users to imput temperature again
-cout<<"If you want to return To* menu enter: y ";
+cout<<"If you want to return To menu enter y: ";
 char ask;
 cin>>ask;
 if(ask=='y'){
