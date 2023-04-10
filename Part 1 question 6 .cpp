@@ -26,27 +26,24 @@ int to_input[4][3]={
     }
     cout<<endl<<endl;
  }
-   menu:
+  
   int temperature,desired_max(0),desired_min(0);
   int *p=&temperature;
   int *max=&desired_max;
   int *min=&desired_min;
- // prompt the user for temperature input
-  lebl:
+  menu:
   cout<<"enter the temperature:";
   cin>>*p;
  // validate temprature input
   if(*p>999 || *p<0){
-    cout<<"the temprature is not in range try again!";
-    goto lebl;
+    cout<<"the temprature is not in range try again! \n";
+    goto menu;
   }
 // Extract digits from temperature and calculate desired max and min temperatures
   while(*p!=0){
-  // Get number of digits in temperature
+  // Get digits in the imput temperature
     int n=log10(*p);
- // Get the highest power of 10 that divides the temperature
     int m=pow(10,n);
- // Get the most significant digit of the temperature
     int num=*p/m;
   /* If the most significant digit is 1, 4, or 7, calculate 
    desired max and min temperatures and exit loop*/
@@ -60,10 +57,8 @@ int to_input[4][3]={
       *max=*max+ num*m;
       *min=*min + num*m;
     }
-  // Remove the most significant digit from the temperature and repeat the process for the remaining digits
     *p%=m;
   }
- // Display desired max and min temperatures
   if(*max==*min){
     cout << "Desired temperature: " <<*max<<endl;
   }
@@ -72,14 +67,16 @@ int to_input[4][3]={
     cout << "Next largest temperature: " <<*max << endl;
   cout<<endl; 
 }
+//allow users to imput temperature again
 cout<<"If you want to return To* menu enter: y ";
 char ask;
 cin>>ask;
 if(ask=='y'){
+*min=0;
+*max=0;
 goto menu;
 cout<<endl;
 cout<<endl;
 }
-//End of program
 return 0;
 }
