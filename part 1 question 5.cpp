@@ -81,8 +81,8 @@ int main() {
     }
 
     // Output final balance and total interest paid
-    cout << "Final balance: $" << *pBalance << endl;
-    cout << "Total interest paid: $" << totalInterest << endl;
+    cout << "Final balance: " << *pBalance << endl;
+    cout << "Total interest paid: " << totalInterest << endl;
 
     // Calculate simple annualized percentage paid in interest
     double percentInterestPaid = (totalInterest / loanAmount) * 100.0;
