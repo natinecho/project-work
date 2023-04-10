@@ -1,4 +1,4 @@
-//code that accept number of row from user
+//code that accept number of column from user
 
 #include <iostream>
 using namespace std;
