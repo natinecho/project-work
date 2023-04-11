@@ -3,11 +3,11 @@ using namespace std;
 int main() {
 
  //declare variables 
-  double loan,interest,payment;
- double balance_loan[40],monthly_interest[40],count(0);
-  cout<<"enter the loan amount:"; //prompt the user to enter loan amount
+  double loan,interest,payment,total_interest(0);
+ double balance_loan[40],monthly_interest[40];
+  cout<<"Enter the loan amount:"; //prompt the user to enter loan amount
   cin>>loan;
-  cout<<"enter interest rate:"; //get interest rate from the user
+  cout<<"Enter interest rate:"; //get interest rate from the user
   cin>>interest;
   payment=(loan)/20; //calculate monthly payment
  //display table headers
@@ -24,11 +24,19 @@ int main() {
          payment+=*(balance_loan+i);
         *(balance_loan+i)=0;
       }
+      total_interest+=*(monthly_interest+i);
+      if(loan<interest){
+      break;
+      }
       // Display monthly data in table format
        cout<<'\n'<<"month"<<i+1<<'\t'<<'\t'<<*(monthly_interest+i)<<'\t'<<'\t'<<*(balance_loan+i)<<'\t'<<'\t'<<payment<<endl;
       // Increment month count
       i++;
   }
+  cout<<endl;
+  cout << "Final balance: " << *(balance_loan+i-1)<< endl<<endl;
+  cout << "Total interest paid: " << total_interest << endl;
+  
  // End of program
 return 0;
 }
